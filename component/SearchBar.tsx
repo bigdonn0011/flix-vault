@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 export default function SearchBar() {
 	const [query, setQuery] = useState('');
 	const router = useRouter();
-	const handleSearch = (e: react.FormEvent) => {
+	const handleSearch = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (!query.trim()) return;
 		router.push(`/?q=${encodeURIComponent(query)}`)
