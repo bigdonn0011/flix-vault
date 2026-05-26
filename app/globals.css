@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Mode */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card-bg: #f8fafc; 
+  --brand: #ff5733;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    --background: #020617;
+    --foreground: #f8fafc;
+    --card-bg: #0f172a; 
+
+  --brand: #ff5733;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card-bg);
+  --color-brand: var(--brand);
+}
