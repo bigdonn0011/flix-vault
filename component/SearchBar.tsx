@@ -1,6 +1,11 @@
+
 'use client'
+import React, { use, useState } from 'react';
+
 // 'use client'
-import { useState } from "react";
+
+// 'use client'
+
 
 import { useRouter } from 'next/navigation';
 export default function SearchBar() {
@@ -14,7 +19,7 @@ export default function SearchBar() {
 	return (
 		<form className="relative w-full mb-8 px-2" action="{handleSearch}"
 		method="get">
-			<input type="search" name="search" placeholder="Search movies"
+			<input type="search" name="search" placeholder="Search movies..."
 				value={query} onChange={(e) => setQuery(e.target.value)}
 				className="w-full bg-card text-foreground px-6 py-4 rounded-2xl border
 					border-zinc-800/50 focus:border-brand focus:ring-1 focus:ring-brand
