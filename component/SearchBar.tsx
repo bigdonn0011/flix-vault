@@ -17,8 +17,7 @@ export default function SearchBar() {
 		router.push(`/?q=${encodeURIComponent(query)}`)
 	}
 	return (
-		<form className="relative w-full mb-8 px-2" action="{handleSearch}"
-		method="get">
+		<form className="relative w-full mb-8 px-2" onSubmit={handleSearch}>
 			<input type="search" name="search" placeholder="Search movies..."
 				value={query} onChange={(e) => setQuery(e.target.value)}
 				className="w-full bg-card text-foreground px-6 py-4 rounded-2xl border

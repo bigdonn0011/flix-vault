@@ -35,7 +35,7 @@ export default async function Home({ searchParams }: {
 							{movies.length > 0 ? (
 								movies.map((movie: any) => (
 									<MovieCard
-										key={movie["#IMDB_ID"]}
+										id={movie["#IMDB_ID"]}
 										title={movie["#TITLE"]}
 										img={movie["#IMG_POSTER"]}
 										year={movie["#YEAR"]}
