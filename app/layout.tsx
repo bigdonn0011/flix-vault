@@ -1,12 +1,43 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Using Inter for a cleaner mobile look
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export const metadata: Metadata = {
-	title: "| Flix-Vault |",
-	description: "A high-performance movie browsing experience.",
+	title: " Flix-Vault ",
+	description: "FLIX-VAULT is a high-performance, mobile-first cinematic discovery terminal built to instantly query, filter, and track over thousands of movie indexes in real time without heavy framework bloat.",
+
+
+	openGraph: {
+		title: "Flix-Vault",
+		description: "FLIX-VAULT is a high-performance, mobile-first cinematic discovery terminal built to instantly query, filter, and track over thousands of movie indexes in real time without heavy framework bloat.",
+		url: "https://flix-vault-001.vercel.app/",
+		type: "website",
+		images: [
+			{
+				url: "https://i.ibb.co/HL8tFQQV/Flix-logo.webp",
+				width: 1200,
+				height: 630,
+				alt: "Flix-Vault Mobile Movie Discovery Terminal Interface Logo",
+			},
+		],
+	},
+
+
+	twitter: {
+		card: "summary_large_image",
+		title: "Flix-Vault",
+		description: "FLIX-VAULT is a high-performance, mobile-first cinematic discovery terminal built to instantly query, filter, and track over thousands of movie indexes in real time.",
+		images: ["https://i.ibb.co/HL8tFQQV/Flix-logo.webp"],
+	},
+
+
+	robots: {
+		index: true,
+		follow: true,
+	},
 };
 
 export default function RootLayout({
