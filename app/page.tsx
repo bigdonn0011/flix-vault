@@ -11,7 +11,7 @@ export default async function Home({ searchParams }: {
 }) {
 
 	const { q } = await searchParams;
-	const searchTerm = q?.toLowerCase() || "vault";
+	const searchTerm = q?.toLowerCase() || "fish";
 
 	const res = await
 		fetch(`https://imdb.iamidiotareyoutoo.com/search?q=${encodeURIComponent(searchTerm)}`);
@@ -33,16 +33,19 @@ export default async function Home({ searchParams }: {
 						<h2 className="text-xl font-bold mb-6">Search Results for "{searchTerm}"</h2>
 						<div className="flex overflow-x-auto gap-4 snap-x snap-mandatory pb-6 no-scrollbar">
 							{movies.length > 0 ? (
-								movies.map((movie: any) => (
-									<MovieCard
-										id={movie["#IMDB_ID"]}
-										title={movie["#TITLE"]}
-										img={movie["#IMG_POSTER"]}
-										year={movie["#YEAR"]}
-										rating={movie["#RANK"] || "5.0"}
+								movies.map((movie: any) => {
+									if (!movie["#IMDB_ID"] || !movie["#IMG_POSTER"]) return null;
+									return (
+										<MovieCard
+											id={movie["#IMDB_ID"]}
+											key={movie["#IMDB_ID"]}
+											title={movie["#TITLE"]}
+											img={movie["#IMG_POSTER"]}
+											year={movie["#YEAR"]}
+											rating={movie["#RANK"] || "5.0"}
 
-									/>
-								))) : <p className="text-muted italic py-10 text-center w-full">
+										/>)
+								})) : <p className="text-muted italic py-10 text-center w-full">
 								"{searchTerm}" could not be found in the vault.
 							</p>}
 						</div>
