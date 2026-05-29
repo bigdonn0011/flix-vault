@@ -6,6 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://flix-vault-001.vercel.app"),
 	title: " Flix-Vault ",
 	description: "FLIX-VAULT is a high-performance, mobile-first cinematic discovery terminal built to instantly query, filter, and track over thousands of movie indexes in real time without heavy framework bloat.",
 
