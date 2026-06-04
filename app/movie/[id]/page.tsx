@@ -1,3 +1,6 @@
+
+
+
 import SearchBar from "@/component/SearchBar";
 import MovieCard from "@/component/MovieCard";
 import Header from "@/component/Header";
@@ -31,7 +34,7 @@ export default async function MovieDetailPage({ params }: RouteParams) {
 					text-zinc-400 hover:text-brand transition-all gap-2"><span className="p-4 py-2 bg-background text-foreground border
 				border-foreground rounded-2xl shadow-xl active:scale-95 transition-all
 				duration-300">
-						<span>&larr;</span> Return to Vault</span>
+							<span>&larr;</span> Return to Vault</span>
 					</a>
 				</div>
 
@@ -80,6 +83,15 @@ export default async function MovieDetailPage({ params }: RouteParams) {
 									{Array.isArray(movie["#ACTORS"]) ? movie["#ACTORS"].join(", ") : movie["#ACTORS"] || "N/A"}
 								</span>
 							</p>
+							{/*<div className="bg-background w-full justify-center align-center flex p-4 border
+					border-background">*/}
+
+							<a href='/'><button className="w-full p-8 py-6 text-center font-bold bg-brand
+							text-foreground text-xl uppercase
+							 m-4 rounded-2xl shadow-xl truncate active:scale-95 transition-all
+				duration-300 hover:scale-110">download / watch</button></a>
+
+							{/*</div>*/}
 						</div>
 					</div>
 
