@@ -30,7 +30,7 @@ export default async function MovieDetailPage({ params }: RouteParams) {
 
 
 				<div className="mb-6">
-					<a href="history.back()" className="inline-flex items-center text-sm font-bold
+					<a href="/" className="inline-flex items-center text-sm font-bold
 					text-zinc-400 hover:text-brand transition-all gap-2"><span className="p-4 py-2 bg-background text-foreground border
 				border-foreground rounded-2xl shadow-xl active:scale-95 transition-all
 				duration-300">
