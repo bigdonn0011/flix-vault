@@ -1,6 +1,5 @@
 import SearchBar from "@/component/SearchBar";
-// import MovieCard from "@/component/MovieCard";
-// import { json } from 'react-router-dom';
+
 import MovieCard from "@/component/MovieCard";
 import Header from "@/component/Header";
 import Footer from "@/component/Footer";

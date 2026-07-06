@@ -14,7 +14,13 @@ export default async function MovieDetailPage({ params }: RouteParams) {
 	const { id } = await params;
 	const res = await fetch(`https://imdb.iamidiotareyoutoo.com/search?q=${id}`);
 	const data = await res.json();
-	const movie = data.description?.[0] || null
+	const movie = data.description?.[0] || null;
+	const downloadUrl = `https://vidsrc.me/embed/movie/${id}`;
+
+	const download = () => {
+		history.back();
+
+	}
 
 	if (!movie) {
 		return (
@@ -86,7 +92,9 @@ export default async function MovieDetailPage({ params }: RouteParams) {
 							{/*<div className="bg-background w-full justify-center align-center flex p-4 border
 					border-background">*/}
 
-							<a href='/'><button className="w-full p-8 py-6 text-center font-bold bg-brand
+							<a href={downloadUrl} download={`${movie["#TITLE"] ||
+								"Flix-Vault-movie"}.mp4`} target="_blank" rel='noopener norefferer '><button className="w-full
+							p-8 py-6 text-center font-bold bg-brand
 							text-foreground text-xl uppercase
 							 m-4 rounded-2xl shadow-xl truncate active:scale-95 transition-all
 				duration-300 hover:scale-110">download / watch</button></a>
@@ -99,7 +107,7 @@ export default async function MovieDetailPage({ params }: RouteParams) {
 
 				<Footer />
 			</main>
-		</div>
+		</div >
 	);
 
 
