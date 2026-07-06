@@ -97,7 +97,7 @@ export default async function MovieDetailPage({ params }: RouteParams) {
 							p-8 py-6 text-center font-bold bg-brand
 							text-foreground text-xl uppercase
 							 m-4 rounded-2xl shadow-xl truncate active:scale-95 transition-all
-				duration-300 hover:scale-110">download / watch</button></a>
+				duration-300 hover:scale-110">Stream Online</button></a>
 
 							{/*</div>*/}
 						</div>
