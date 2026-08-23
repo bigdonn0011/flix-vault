@@ -12,8 +12,8 @@ export default async function Home({
 }) {
   const { q } = await searchParams;
   const searchTerm = q?.toLowerCase().trim() || "Thor Ragnarok";
-  const apiKey = 
-  process.env.NEXT_PUBLIC_OMDB_API_KEY || process.env.OMDB_API_KEY;
+  const apiKey =
+    process.env.NEXT_PUBLIC_OMDB_API_KEY || process.env.OMDB_API_KEY;
 
   const res = await fetch(
     `https://www.omdbapi.com/?s=${encodeURIComponent(searchTerm)}&apikey=${apiKey}`,
@@ -53,7 +53,7 @@ export default async function Home({
                       title={movie.Title}
                       img={movie.Poster}
                       year={movie.Year}
-                      rating="N/A"
+                      rating={0}
                     />
                   );
                 })
