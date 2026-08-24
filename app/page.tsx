@@ -11,7 +11,7 @@ export default async function Home({
   searchParams: Promise<{ q?: string }>;
 }) {
   const { q } = await searchParams;
-  const searchTerm = q?.toLowerCase().trim() || "smurfs";
+  const searchTerm = q?.toLowerCase().trim() || "minions & monsters";
   const apiKey =
     process.env.NEXT_PUBLIC_OMDB_API_KEY || process.env.OMDB_API_KEY;
 
