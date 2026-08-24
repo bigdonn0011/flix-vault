@@ -123,15 +123,21 @@ export default async function MovieDetailPage({ params }: RouteParams) {
                 target="_blank"
                 rel="noopener norefferer "
               >
-                <button
-                  className="w-full truncate 
+                <span
+                  className="flex flex-col justify-center items-center space
+              -2 gap-2 block text-foreground text-left font-medium text-xl"
+                >
+                  Stream from Server 1
+                  <button
+                    className="w-full truncate 
 							p-8 py-6 text-center font-bold bg-brand
 							text-foreground text-xl uppercase
 							 m-4 rounded-2xl shadow-xl truncate active:scale-95 transition-all
 				duration-300 hover:scale-110"
-                >
-                  Stream {movie.Title} Online
-                </button>
+                  >
+                    Stream {movie.Title} Online
+                  </button>
+                </span>
               </a>
               <a
                 href={downloadUrl2}
@@ -141,7 +147,7 @@ export default async function MovieDetailPage({ params }: RouteParams) {
               >
                 <span
                   className="flex flex-col justify-center items-center space
-              -2 gap-2 block text-foreground"
+              -2 gap-2 block text-foreground text-left font-medium text-xl"
                 >
                   Stream from Server 2
                   <button
@@ -151,7 +157,7 @@ export default async function MovieDetailPage({ params }: RouteParams) {
 							 m-4 rounded-2xl shadow-xl truncate active:scale-95 transition-all
 				duration-300 hover:scale-110"
                   >
-                    {movie.Title} Online
+                    Stream {movie.Title} Online
                   </button>
                 </span>
               </a>
@@ -163,3 +169,4 @@ export default async function MovieDetailPage({ params }: RouteParams) {
     </div>
   );
 }
+ 
