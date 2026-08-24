@@ -5,7 +5,7 @@ interface MovieCardProps {
   title: string;
   img: string;
   year: number | string;
-  rating: number;
+  rating: number | string;
 }
 const MovieCard = ({ id, title, img, year, rating }: MovieCardProps) => {
   return (

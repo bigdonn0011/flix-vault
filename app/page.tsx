@@ -53,7 +53,7 @@ export default async function Home({
                       title={movie.Title}
                       img={movie.Poster}
                       year={movie.Year}
-                      rating={0}
+                      rating={movie.imdbRating}
                     />
                   );
                 })

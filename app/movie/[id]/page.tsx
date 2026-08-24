@@ -10,15 +10,16 @@ interface RouteParams {
 
 export default async function MovieDetailPage({ params }: RouteParams) {
   const { id } = await params;
-  
+
   const apiKey =
-  process.env.NEXT_PUBLIC_OMDB_API_KEY || process.env.OMDB_API_KEY;
+    process.env.NEXT_PUBLIC_OMDB_API_KEY || process.env.OMDB_API_KEY;
 
   const res = await fetch(
     `https://www.omdbapi.com/?i=${encodeURIComponent(id)}&plot=full&apikey=${apiKey}`,
   );
   const movie = await res.json();
   const downloadUrl = `https://vidsrc.me/embed/movie/${id}`;
+  const downloadUrl2 = `https://vidsrcme.ru/embed/movie/${id}`;
   if (movie.Response === "False" || !movie.imdbID) {
     return (
       <main className="p-6 bg-background text-foreground min-h-screen flex items-center justify-center">
@@ -112,23 +113,49 @@ export default async function MovieDetailPage({ params }: RouteParams) {
                 </span>
               </p>
             </div>
-
-            <a
-              href={downloadUrl}
-              download={`${movie.Title || "Flix-Vault-movie"}.mp4`}
-              target="_blank"
-              rel="noopener norefferer "
+            <div
+              className="flex flex-col justify-center items-center space
+              -2 gap-2 max-w-2xl"
             >
-              <button
-                className="w-full truncate 
+              <a
+                href={downloadUrl}
+                download={`${movie.Title || "Flix-Vault-movie"}.mp4`}
+                target="_blank"
+                rel="noopener norefferer "
+              >
+                <button
+                  className="w-full truncate 
 							p-8 py-6 text-center font-bold bg-brand
 							text-foreground text-xl uppercase
 							 m-4 rounded-2xl shadow-xl truncate active:scale-95 transition-all
 				duration-300 hover:scale-110"
+                >
+                  Stream {movie.Title} Online
+                </button>
+              </a>
+              <a
+                href={downloadUrl2}
+                download={`${movie.Title || "Flix-Vault-movie"}.mp4`}
+                target="_blank"
+                rel="noopener norefferer "
               >
-                Stream {movie.Title} Online
-              </button>
-            </a>
+                <span
+                  className="flex flex-col justify-center items-center space
+              -2 gap-2 block text-foreground"
+                >
+                  Stream from Server 2
+                  <button
+                    className="w-full truncate 
+							p-8 py-6 text-center font-bold bg-brand
+							text-foreground text-xl uppercase
+							 m-4 rounded-2xl shadow-xl truncate active:scale-95 transition-all
+				duration-300 hover:scale-110"
+                  >
+                    {movie.Title} Online
+                  </button>
+                </span>
+              </a>
+            </div>
           </div>
         </section>
         <Footer />
